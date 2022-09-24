@@ -1,6 +1,6 @@
 class Array(object):
     """Representa um array."""
-    def __init__(self, capacity, fillValue=0):
+    def __init__(self, capacity, fillValue=None):
         """Capacidade é o tamanho estático do array.
         fillValue é colocado em cada posição."""
         self.items = list()
@@ -13,7 +13,7 @@ class Array(object):
         return len(self.items)
     
     def size(self):
-            return self.logicalSize(self.items)
+        return self.logicalSize(self.items)
 
     def __str__(self):
         """-> A representação de string do array."""
@@ -25,20 +25,21 @@ class Array(object):
 
     def __getitem__(self, index):
         """Operador de subscrito para acesso no índice."""
-        return self.items[index]
+        if index > 0 or index < self.size():
+            return self.items[index]
 
     def __setitem__(self, index, newItem):
         """Operador de subscrito para substituição no índice."""
-        if index < 0 or index > self.__sizeof__():
+        if index < 0 or index > self.size():
             print('Nao adicionado')
+        else:
             if self.items[index] != newItem:
-                self.logicalSize += 1
+                self.logicalSize+=1
                 print('Numero diferente')
             else:
                 print('numero igual')
-        else:
-            print("")
-        self.items[index] = newItem
+            print("Adicionado")
+            self.items[index] = newItem
     
 def main():
 

@@ -1,11 +1,15 @@
 def reverse(lista): 
-  revList = []
+  reverseList = []
   for i in range((len(lista))):
-    revList.append(lista[(i + 1) * -1])
-  return revList 
+    reverseList.append(lista[(i + 1) * -1])
+  return reverseList 
 
 lista = [1, 2, 3, 4, 5, 6, 7]
 
-exec = reverse(lista)
+def main():
 
-print(exec)
+  resultado = reverse(lista)
+
+  print(resultado)
+  
+main()

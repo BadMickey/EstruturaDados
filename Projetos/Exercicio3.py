@@ -17,6 +17,9 @@ def expo(base, iter):
   
   return res
 
-exec = expo(2, 1)
+def main():
+  resultado = expo(2, 1)
 
-print(exec)
+  print(resultado)
+  
+main()
