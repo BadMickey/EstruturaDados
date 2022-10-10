@@ -1,3 +1,12 @@
+"""
+Exercicios feitos nesse arquivo:
+1. Adicione uma variável de instância logicalSize à classe Array. Essa variável é inicialmente 0 e rastreará o número de itens atualmente disponíveis para os usuários do array. 
+Em seguida, adicione o método size() à classe Array. Esse método deve retornar o tamanho lógico do array. O método __len__ ainda deve retornar a capacidade ou tamanho físico do
+array.
+
+2. Adicione precondições aos métodos __getitem__ e __setitem__ da classe Array. A pré-condição de cada método é 0 <= index < size(). Certifique-se de disparar uma exceção se a 
+precondição não for atendida.
+"""
 class Array(object):
     """Representa um array."""
     def __init__(self, capacity, fillValue=None):
@@ -13,7 +22,7 @@ class Array(object):
         return len(self.items)
     
     def size(self):
-        return self.logicalSize(self.items)
+        "return self.logicalSize(self.items)"
 
     def __str__(self):
         """-> A representação de string do array."""
@@ -33,7 +42,7 @@ class Array(object):
         if index < 0 or index > self.size():
             print('Nao adicionado')
         else:
-            if self.items[index] != newItem:
+            if self.items[index] != newItem:    
                 self.logicalSize+=1
                 print('Numero diferente')
             else:
@@ -48,6 +57,6 @@ def main():
     teste[6] = 1
     teste[5] = 1
     print(teste)
-    print(Array.size)
+    print(Array.__sizeof__)
 
 main()
